@@ -22,13 +22,27 @@ end
 
 gem 'jquery-rails'
 
-group :test, :development do
-  gem 'rspec-rails', '~> 2.11'
+group :production do
+  gem 'postmark-rails'
+  gem 'unicorn'
+  gem 'postmark-mitt'
+end
+
+group :development do
+  gem 'letter_opener'
 end
 
 group :test do
   gem 'capybara', '1.1.2'
+  gem 'simplecov', require: false
 end
+
+group :test, :development do
+  gem 'rspec-rails', '~> 2.11'
+  gem 'launchy'
+end
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

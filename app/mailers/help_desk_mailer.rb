@@ -3,5 +3,7 @@ class HelpDeskMailer < ActionMailer::Base
 
 def ticket_email(ticket)
   @ticket = ticket
-  mail(subject: 'Thank you for contacting the Helpdesk')
+    mail(subject: 'Thank you for contacting the Helpdesk')
+    reply_to: ce8b84e9693b33360b628a29fc31045d@inbound.postmarkapp.com
+  end
 end
